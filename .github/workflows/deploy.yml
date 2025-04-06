@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Print secret presence
         run: |
-          if [ -z "${{ secrets.DOCKER_HUB_TOKEN }}" ]; then
+          if [ -z "${{ secrets.MY_SECRET }}" ]; then
             echo "MY_SECRET is empty or not set"
           else
             echo "MY_SECRET is set (value will be masked)"
-            echo "${{ secrets.DOCKER_HUB_TOKEN }}"
+            echo "${{ secrets.MY_SECRET }}"
           fi
