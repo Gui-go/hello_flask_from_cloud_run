@@ -2,7 +2,7 @@ name: Build Flask Docker Image
 
 on:
   push:
-    branches: [ main ]
+    branches: [ clean-main ]
 
 jobs:
   build:
