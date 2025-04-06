@@ -18,9 +18,3 @@ jobs:
         username: guigo13
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
     
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v3
-      with:
-        context: .
-        push: true
-        tags: guigo13/flask-app:latest
