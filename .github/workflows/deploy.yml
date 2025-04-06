@@ -6,5 +6,11 @@ jobs:
   test-secret:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo secret
-        run: echo "The secret is ${{ secrets.DOCKER_HUB_TOKEN }}"
+      - name: Print secret presence
+        run: |
+          if [ -z "${{ secrets.MY_SECRET }}" ]; then
+            echo "MY_SECRET is empty or not set"
+          else
+            echo "MY_SECRET is set (value will be masked)"
+            echo "${{ secrets.MY_SECRET }}"
+          fi
